@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\practic2_retuev.props" />
+</Project>
