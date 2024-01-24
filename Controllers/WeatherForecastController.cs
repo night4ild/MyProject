@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace practic2_retuev.Controllers
+namespace BackendAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
