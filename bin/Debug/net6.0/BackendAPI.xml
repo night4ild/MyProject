@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BackendAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BackendAPI.Controllers.CategoryController.GetAll">
+            <summary>
+            Вывод всех записей о категориях
+            </summary>
+            <remarks>
+             Пример запроса:
+            </remarks>
+            <param name="model">Категории</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:BackendAPI.Controllers.CategoryController.GetByld(System.Int32)">
+            <summary>
+            Поиск категории по id
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "CategoryId" : "id категории"
+                    }
+            </remarks>
+            <param name="model">Получение информации о категориях</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CategoryController.Add(BackendAPI.Models.Contracts.CategoryDto)">
+            <summary>
+            Создание новой категории
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "CategoryName" : "Введите название новой категории"
+                    }
+            </remarks>
+            <param name="model">Создание новой категории</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CategoryController.Update(BackendAPI.Models.Contracts.CategoryDtoUpdate)">
+            <summary>
+            Обновление существующей категории
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "CategoryId" : "Ввести id категории, информацию о котой нужно изменить"
+                        "CategoryName" : "Название категории, которую меняете "
+                    }
+            </remarks>
+            <param name="model">Обновление существующеЙ категории</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CategoryController.Delete(System.Int32)">
+            <summary>
+            Удаление категории
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Ввести id категории пользователя,  которую нужно удалить"
+                    }
+            </remarks>
+            <param name="model">Удаление категории</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CommentController.GetAll">
+            <summary>
+            Вывод всех записей о комментариях
+            </summary>
+            <remarks>
+             Пример запроса:
+            </remarks>
+            <param name="model">Комментарии</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:BackendAPI.Controllers.CommentController.GetByld(System.Int32)">
+            <summary>
+            Поиск комментария по id
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "id" : "id комментария"
+                    }
+            </remarks>
+            <param name="model">Получение информации о комментариях</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CommentController.Add(BackendAPI.Models.Contracts.CommentDto)">
+            <summary>
+            Создание нового комментария
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Content" : "Введите комментарий"
+                    }
+            </remarks>
+            <param name="model">Создание нового комментария</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CommentController.Update(BackendAPI.Models.Contracts.CommentDtoUpdate)">
+            <summary>
+            Обновление существующего комментария
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "CommentId" : "Ввести id комментария, информацию о котором нужно изменить"
+                        "Content" : "Изменяемый контент комментария "
+                    }
+            </remarks>
+            <param name="model">Обновление существующего комментария</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.CommentController.Delete(System.Int32)">
+            <summary>
+            Удаление комментария
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Ввести id комментария, который нужно удалить"
+                    }
+            </remarks>
+            <param name="model">Удаление комментария</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.PostController.GetAll">
+            <summary>
+            Вывод всех записей о постах
+            </summary>
+            <remarks>
+             Пример запроса:
+            </remarks>
+            <param name="model">Посты</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:BackendAPI.Controllers.PostController.GetByld(System.Int32)">
+            <summary>
+            Поиск по id
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "id" : "id поста"
+                    }
+            </remarks>
+            <param name="model">Получение информации о постах</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.PostController.Add(BackendAPI.Contracts.PostDto)">
+            <summary>
+            Создание новой модели машины
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "UserId" : "Введите id пользователя (49375)"
+                        "Photo" : "Прикрепите фото к посту (77742348.jpg)"
+                    }
+            </remarks>
+            <param name="model">Создание нового поста</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.PostController.Update(BackendAPI.Contracts.PostDtoUpdate)">
+            <summary>
+            Обновление существующего поста
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                     "UserId" : "Введите id пользователя которого нужно изменить (49375)"
+                        "Photo" : "Прикрепите фото к посту (77742348.jpg)"
+                    }
+            </remarks>
+            <param name="model">Обновление существующего поста</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.PostController.Delete(System.Int32)">
+            <summary>
+            Удаление поста
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Ввести id поста, который нужно удалить"
+                    }
+            </remarks>
+            <param name="model">Удаление поста</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.RoleController.GetAll">
+            <summary>
+            Вывод всех записей о ролях
+            </summary>
+            <remarks>
+             Пример запроса:
+            </remarks>
+            <param name="model">Роли</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:BackendAPI.Controllers.RoleController.GetByld(System.Int32)">
+            <summary>
+            Поиск по id
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "id" : "id роли"
+                    }
+            </remarks>
+            <param name="model">Получение информации о ролях</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.RoleController.Add(BackendAPI.Contracts.RoleDto)">
+            <summary>
+            Создание новой роли
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Name" : "Введите название новой роли"
+                    }
+            </remarks>
+            <param name="model">Создание новой роли</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.RoleController.Update(BackendAPI.Contracts.RoleDtoUpdate)">
+            <summary>
+            Обновление существующеЙ роли
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "RoleId" : "Ввести id роли, информацию о котой нужно изменить"
+                        "Name" : "Название роли, которую меняете "
+                    }
+            </remarks>
+            <param name="model">Обновление существующеЙ роли</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Удаление роли
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Ввести id роли пользователя,  которую нужно удалить"
+                    }
+            </remarks>
+            <param name="model">Удаление владельца</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.UsersController.GetAll">
+             <summary>
+              Вывод всех записей о пользователе
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST /Todo
+                 {
+                    "login" : "A4Tech Bloody B188",
+                    "passkey" : "!Pa$$word123@",
+                    "firstname" : "Иван",
+                    "lastname" : "Иванов"
+                 }
+            
+             </remarks>
+             <param name="model">Пользователь</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.UsersController.GetByld(System.Int32)">
+            <summary>
+            Поиск по id
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "id" : "id пользователя
+                    }
+            </remarks>
+            <param name="model">Получение информации о пользователях</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.UsersController.Add(BackendAPI.Models.Contracts.UserDto)">
+            <summary>
+            Создание нового пользователя
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "UserName" : "Введите логин нового пользователя"
+                        "Email" : "Введите почту нового пользователя"
+                        "Passkey" : "Введите пароль нового пользователя"
+                        "City" : "Введите местоположении нового пользователя"
+                        "RoleId" : "Введите роль нового пользователя"
+                    }
+            </remarks>
+            <param name="model">Создание нового пользователя</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.UsersController.Update(BackendAPI.Models.Contracts.UserDtoUpdate)">
+            <summary>
+             Изменение нового пользователя
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "UserID" : "id пользователя, в котором нужно изменить данные"
+                        "UserName" : "Введите логин нового пользователя"
+                        "Email" : "Введите почту нового пользователя"
+                        "Password" : "Введите пароль нового пользователя"
+                        "Location" : "Введите местоположении нового пользователя"
+                        "RoleId" : "Введите роль нового пользователя"
+                    }
+            </remarks>
+            <param name="model">Создание нового пользователя</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendAPI.Controllers.UsersController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователя
+            </summary>
+            <remarks>
+             Пример запроса:
+             
+                    {
+                        "Ввести id пользователя,  которого нужно удалить"
+                    }
+            </remarks>
+            <param name="model">Удаление пользователя</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

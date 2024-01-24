@@ -15,14 +15,35 @@ namespace BackendAPI.Controllers
         {
             Context = context;
         }
-
+        /// <summary>
+        /// Вывод всех записей о категориях
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        /// </remarks>
+        /// <param name="model">Категории</param>
+        /// <returns></returns>
+        /// 
+        // GET api/<CategoryController>
         [HttpGet]
         public IActionResult GetAll()
         {
             List<Category> categories = Context.Categories.ToList();
             return Ok(categories);
         }
-
+        /// <summary>
+        /// Поиск категории по id
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "CategoryId" : "id категории"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Получение информации о категориях</param>
+        /// <returns></returns>
+        // GET api/<CategotyController>
         [HttpGet("{id}")]
         public IActionResult GetByld(int id)
         {
@@ -34,7 +55,19 @@ namespace BackendAPI.Controllers
             return Ok(category);
         }
 
-
+        /// <summary>
+        /// Создание новой категории
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "CategoryName" : "Введите название новой категории"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Создание новой категории</param>
+        /// <returns></returns>
+        // GET api/<CategoryController>
         [HttpPost]
         public IActionResult Add(CategoryDto category)
         {
@@ -49,7 +82,20 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(category);
         }
-
+        /// <summary>
+        /// Обновление существующей категории
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "CategoryId" : "Ввести id категории, информацию о котой нужно изменить"
+        ///             "CategoryName" : "Название категории, которую меняете "
+        ///         }
+        /// </remarks>
+        /// <param name="model">Обновление существующеЙ категории</param>
+        /// <returns></returns>
+        // PUT api/CategoryController>
         [HttpPut]
         public IActionResult Update(CategoryDtoUpdate category)
         {
@@ -64,6 +110,19 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(newCategory);
         }
+        /// <summary>
+        /// Удаление категории
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "Ввести id категории пользователя,  которую нужно удалить"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Удаление категории</param>
+        /// <returns></returns>
+        // DELETE api/<CategoryController>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

@@ -15,14 +15,44 @@ namespace BackendAPI.Controllers
         {
             Context = context;
         }
+        /// <summary>
+        ///  Вывод всех записей о пользователе
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "login" : "A4Tech Bloody B188",
+        ///        "passkey" : "!Pa$$word123@",
+        ///        "firstname" : "Иван",
+        ///        "lastname" : "Иванов"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="model">Пользователь</param>
+        /// <returns></returns>
 
+        // GET api/<UserController>
         [HttpGet]
         public IActionResult GetAll()
         {
             List<User> users = Context.Users.ToList();
             return Ok(users);
         }
-
+        /// <summary>
+        /// Поиск по id
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "id" : "id пользователя
+        ///         }
+        /// </remarks>
+        /// <param name="model">Получение информации о пользователях</param>
+        /// <returns></returns>
+        // GET api/<UserController>
         [HttpGet("{id}")]
         public IActionResult GetByld(int id)
         {
@@ -35,7 +65,23 @@ namespace BackendAPI.Controllers
         }
 
 
-
+        /// <summary>
+        /// Создание нового пользователя
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "UserName" : "Введите логин нового пользователя"
+        ///             "Email" : "Введите почту нового пользователя"
+        ///             "Passkey" : "Введите пароль нового пользователя"
+        ///             "City" : "Введите местоположении нового пользователя"
+        ///             "RoleId" : "Введите роль нового пользователя"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Создание нового пользователя</param>
+        /// <returns></returns>
+        // POST api/<UserController>
         [HttpPost]
         public IActionResult Add(UserDto user)
         {
@@ -57,7 +103,24 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(user);
         }
-
+        /// <summary>
+        ///  Изменение нового пользователя
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "UserID" : "id пользователя, в котором нужно изменить данные"
+        ///             "UserName" : "Введите логин нового пользователя"
+        ///             "Email" : "Введите почту нового пользователя"
+        ///             "Password" : "Введите пароль нового пользователя"
+        ///             "Location" : "Введите местоположении нового пользователя"
+        ///             "RoleId" : "Введите роль нового пользователя"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Создание нового пользователя</param>
+        /// <returns></returns>
+        // PUT api/<UserController>
         [HttpPut]
         public IActionResult Update(UserDtoUpdate user)
         {
@@ -80,6 +143,20 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(newUser);
         }
+
+        /// <summary>
+        /// Удаление пользователя
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "Ввести id пользователя,  которого нужно удалить"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Удаление пользователя</param>
+        /// <returns></returns>
+        // DELETE api/<UserController>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

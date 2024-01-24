@@ -15,18 +15,39 @@ namespace BackendAPI.Controllers
         {
             Context = context;
         }
-
+        /// <summary>
+        /// Вывод всех записей о постах
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        /// </remarks>
+        /// <param name="model">Посты</param>
+        /// <returns></returns>
+        /// 
+        // GET api/<PostController>
         [HttpGet]
         public IActionResult GetAll()
         {
             List<Post> posts = Context.Posts.ToList();
             return Ok(posts);
         }
-
+        /// <summary>
+        /// Поиск по id
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "id" : "id поста"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Получение информации о постах</param>
+        /// <returns></returns>
+        // GET api/<PostController>
         [HttpGet("{id}")]
         public IActionResult GetByld(int id)
         {
-            Post? post = Context.Posts.Where(x => x.UserId == id).FirstOrDefault();
+            Post? post = Context.Posts.Where(x => x.PostId == id).FirstOrDefault();
             if (post == null)
             {
                 return BadRequest("Данные не найдены");
@@ -35,7 +56,20 @@ namespace BackendAPI.Controllers
         }
 
 
-
+        /// <summary>
+        /// Создание новой модели машины
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "UserId" : "Введите id пользователя (49375)"
+        ///             "Photo" : "Прикрепите фото к посту (77742348.jpg)"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Создание нового поста</param>
+        /// <returns></returns>
+        // GET api/<PostController>
         [HttpPost]
         public IActionResult Add(PostDto post)
         {
@@ -53,7 +87,20 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(post);
         }
-
+        /// <summary>
+        /// Обновление существующего поста
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///          "UserId" : "Введите id пользователя которого нужно изменить (49375)"
+        ///             "Photo" : "Прикрепите фото к посту (77742348.jpg)"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Обновление существующего поста</param>
+        /// <returns></returns>
+        // GET api/<PostController>
         [HttpPut]
         public IActionResult Update(PostDtoUpdate post)
         {
@@ -72,6 +119,21 @@ namespace BackendAPI.Controllers
             Context.SaveChanges();
             return Ok(newPost);
         }
+
+        /// <summary>
+        /// Удаление поста
+        /// </summary>
+        /// <remarks>
+        ///  Пример запроса:
+        ///  
+        ///         {
+        ///             "Ввести id поста, который нужно удалить"
+        ///         }
+        /// </remarks>
+        /// <param name="model">Удаление поста</param>
+        /// <returns></returns>
+        // GET api/<PostController>
+
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

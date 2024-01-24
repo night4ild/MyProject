@@ -210,3 +210,5 @@ C:\Users\retue\Desktop\BackendAPI\BackendAPI\obj\Debug\net6.0\BackendAPI.genrunt
 C:\Users\retue\Desktop\BackendAPI\BackendAPI\obj\Debug\net6.0\ref\BackendAPI.dll
 C:\Users\retue\Desktop\BackendAPI\BackendAPI\bin\Debug\net6.0\Mapster.dll
 C:\Users\retue\Desktop\BackendAPI\BackendAPI\bin\Debug\net6.0\Mapster.Core.dll
+C:\Users\retue\Desktop\BackendAPI\BackendAPI\bin\Debug\net6.0\BackendAPI.xml
+C:\Users\retue\Desktop\BackendAPI\BackendAPI\obj\Debug\net6.0\BackendAPI.xml
